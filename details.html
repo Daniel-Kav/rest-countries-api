@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1602d5504a.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="detailcss.css">
+</head>
+
+<body>
+    <nav>
+        <h3>Where in the world?</h3>
+
+        <span class="dark-mode">
+            <i class="fas fa-sun"></i>
+            <p>Light Mode</p>
+        </span>
+    </nav>
+
+    <button id="back">
+        <span>
+            <i class="fa-solid fa-arrow-left"></i>
+            <a>Back</a>
+        </span>
+    </button>
+
+    <div id="big-container">
+
+    </div>
+
+
+
+    <script>
+        const darkMode = document.querySelector(".dark-mode");
+
+        darkMode.addEventListener("click", () => {
+            if (document.querySelector(".dark-mode p").innerHTML === "Light Mode") {
+                document.querySelector(".dark-mode p").innerHTML = "Dark Mode";
+                document.documentElement.style.setProperty('--dark-bg', '#fafafa');
+                document.documentElement.style.setProperty('--light-dark', '#ffffff');
+                document.documentElement.style.setProperty('--white-color', '#121417');
+            } else {
+                document.querySelector(".dark-mode p").innerHTML = "Light Mode";
+                document.documentElement.style.setProperty('--dark-bg', '#212c36');
+                document.documentElement.style.setProperty('--light-dark', '#2c3743');
+                document.documentElement.style.setProperty('--white-color', '#f9f8fa');
+            }
+        })
+
+        document.getElementById("back").addEventListener("click", () => {
+            window.location.href = "./index.html";
+        })
+    </script>
+</body>
+
+</html>
